@@ -59,7 +59,7 @@ document.getElementById('absensiForm').addEventListener('submit', function (e) {
     const formData = new FormData(this);
     if (!fotoData.value) return alert("Harap ambil dan konfirmasi foto dulu!");
     loadingOverlay.style.display = 'flex';
-    fetch('https://script.google.com/macros/library/d/1i3t3HBuz-JkZLLrZL2JgX7pf5-C8ZD0-VMJIzJO7mQ46VnnNounY8PNN/1', {
+    fetch('https://script.google.com/macros/s/AKfycbxRb9YsZcN3_DKQB4kCe-YES3pJP-qxMWMdhrkGBWQjEb4Wzxu8YYCNuH6E74thTJbiaQ/exec', {
         method: 'POST',
         body: formData
     })
