@@ -7,10 +7,15 @@
     <title>Absensi</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
+    <div id="loadingOverlay">
+        <div style="text-align:center">
+            <div class="spinner"></div>
+            Mengirim absensi...
+        </div>
+    </div>
     <form id="absensiForm">
         <h2>📝 Form Absensi</h2>
 
@@ -50,7 +55,7 @@
 
         <input type="hidden" name="foto" id="fotoData">
         <button type="submit">✅ Kirim Absensi</button>
-        <footer>Absensi RMK </footer>
+        <footer>Absensi RMK ✨</footer>
     </form>
 
     <script src="script.js"></script>
