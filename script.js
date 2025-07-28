@@ -57,7 +57,7 @@ document.getElementById('absensiForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(this);
     if (!fotoData.value) return alert("Harap ambil dan konfirmasi foto dulu!");
-    fetch('SCRIPT_URL_DIISI_NANTI', {
+    fetch('https://script.google.com/macros/s/AKfycbxRb9YsZcN3_DKQB4kCe-YES3pJP-qxMWMdhrkGBWQjEb4Wzxu8YYCNuH6E74thTJbiaQ/exec', {
         method: 'POST',
         body: formData
     })
