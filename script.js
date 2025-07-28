@@ -54,24 +54,7 @@ function konfirmasiFoto() {
     alert("📸 Foto disimpan!");
 }
 
-document.getElementById('absensiForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    if (!fotoData.value) return alert("Harap ambil dan konfirmasi foto dulu!");
-    loadingOverlay.style.display = 'flex';
-    fetch('https://script.google.com/macros/s/AKfycbxRb9YsZcN3_DKQB4kCe-YES3pJP-qxMWMdhrkGBWQjEb4Wzxu8YYCNuH6E74thTJbiaQ/exec', {
-        method: 'POST',
-        body: formData
-    })
-        .then(res => res.text())
-        .then(data => {
-            window.location.href = "page2.html";
-        })
-        .catch(err => {
-            loadingOverlay.style.display = 'none';
-            alert("❌ Gagal mengirim absensi.");
-        });
-});
+
 
 fetch('https://script.google.com/macros/s/AKfycbxRb9YsZcN3_DKQB4kCe-YES3pJP-qxMWMdhrkGBWQjEb4Wzxu8YYCNuH6E74thTJbiaQ/exec')
     .then(res => res.json())
