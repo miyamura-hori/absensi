@@ -7,6 +7,7 @@ const cameraAlert = document.getElementById('cameraAlert');
 const btnGroupFoto = document.getElementById('btnGroupFoto');
 const btnRetake = document.getElementById('btnRetake');
 const btnConfirm = document.getElementById('btnConfirm');
+const loadingOverlay = document.getElementById('loadingOverlay');
 
 let kameraAktif = false;
 
@@ -57,7 +58,8 @@ document.getElementById('absensiForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const formData = new FormData(this);
     if (!fotoData.value) return alert("Harap ambil dan konfirmasi foto dulu!");
-    fetch('https://script.google.com/macros/s/AKfycbxRb9YsZcN3_DKQB4kCe-YES3pJP-qxMWMdhrkGBWQjEb4Wzxu8YYCNuH6E74thTJbiaQ/exec', {
+    loadingOverlay.style.display = 'flex';
+    fetch('https://script.google.com/macros/library/d/1i3t3HBuz-JkZLLrZL2JgX7pf5-C8ZD0-VMJIzJO7mQ46VnnNounY8PNN/1', {
         method: 'POST',
         body: formData
     })
@@ -65,7 +67,10 @@ document.getElementById('absensiForm').addEventListener('submit', function (e) {
         .then(data => {
             window.location.href = "page2.html";
         })
-        .catch(err => alert("❌ Gagal mengirim absensi."));
+        .catch(err => {
+            loadingOverlay.style.display = 'none';
+            alert("❌ Gagal mengirim absensi.");
+        });
 });
 
 const namaList = ["Aan", "Alit", "Arka", "Beny", "Budi", "Chelsea", "Deon", "Dewi", "Fajar", "Helmi", "Indah S", "Katarina", "Kelvin", "Ketut", "Mila", "Nane", "Odhy", "Pastini", "Sri", "Sumar"];
