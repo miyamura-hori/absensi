@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absensi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <form id="absensiForm">
+        <h2>📝 Form Absensi</h2>
+
+        <label>Absensi:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="absensi" value="Masuk" required> Masuk</label>
+            <label><input type="radio" name="absensi" value="Keluar"> Keluar</label>
+        </div>
+
+        <label>Shift:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="shift" value="Pagi" required> Pagi</label>
+            <label><input type="radio" name="shift" value="Siang"> Siang</label>
+            <label><input type="radio" name="shift" value="Split"> Split</label>
+            <label><input type="radio" name="shift" value="Lembur"> Lembur</label>
+        </div>
+
+        <label for="nama">Nama:</label>
+        <select id="nama" name="nama" required>
+            <option value="">-- Pilih Nama --</option>
+        </select>
+
+        <label>Foto (kamera langsung):</label>
+        <video id="videoPreview" autoplay muted playsinline></video>
+        <div id="cameraAlert">⚠️ Kamera belum diizinkan. Silakan izinkan akses kamera terlebih dahulu.</div>
+        <button type="button" onclick="ambilFoto()">📸 Ambil Foto</button>
+        <canvas id="canvas" style="display: none;"></canvas>
+
+        <div id="previewContainer">
+            <p>📷 Hasil Foto:</p>
+            <img id="imagePreview" src="" alt="Preview Foto">
+            <div class="btn-group" id="btnGroupFoto">
+                <button type="button" onclick="retakeFoto()" id="btnRetake">🔄 Ulangi</button>
+                <button type="button" onclick="konfirmasiFoto()" id="btnConfirm">✅ Pakai Foto Ini</button>
+            </div>
+        </div>
+
+        <input type="hidden" name="foto" id="fotoData">
+        <button type="submit">✅ Kirim Absensi</button>
+        <footer>Absensi RMK </footer>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

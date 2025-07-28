@@ -1,0 +1,146 @@
+:root {
+    --maroon: #b03c3c;
+    --soft-bg: #fef6f6;
+    --text-color: #2e2e2e;
+    --radius: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #fff0f0, #ffeaea);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px 35px;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(176, 60, 60, 0.2);
+    width: 100%;
+    max-width: 520px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    text-align: center;
+    color: var(--maroon);
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+input[type="radio"] {
+    margin-right: 6px;
+    accent-color: var(--maroon);
+}
+
+select,
+button,
+input[type="text"] {
+    font-size: 1rem;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-top: 10px;
+    transition: box-shadow 0.3s ease;
+}
+
+select:hover,
+select:focus {
+    box-shadow: 0 0 0 3px rgba(176, 60, 60, 0.2);
+}
+
+button {
+    background-color: var(--maroon);
+    color: white;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 4px 12px rgba(176, 60, 60, 0.3);
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.02);
+    background-color: #912c2c;
+}
+
+video,
+img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+#previewContainer {
+    display: none;
+    text-align: center;
+    margin-top: 12px;
+}
+
+#previewContainer img {
+    max-width: 100%;
+    border: 2px solid #ccc;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-group button {
+    flex: 1;
+}
+
+#cameraAlert {
+    display: none;
+    background-color: #ffe5e5;
+    color: #8a1c1c;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 18px;
+}
