@@ -73,11 +73,18 @@ document.getElementById('absensiForm').addEventListener('submit', function (e) {
         });
 });
 
-const namaList = ["Aan", "Alit", "Arka", "Beny", "Budi", "Chelsea", "Deon", "Dewi", "Fajar", "Helmi", "Indah S", "Katarina", "Kelvin", "Ketut", "Mila", "Nane", "Odhy", "Pastini", "Sri", "Sumar"];
-const selectNama = document.getElementById('nama');
-namaList.forEach(n => {
-    const opt = document.createElement('option');
-    opt.value = n;
-    opt.textContent = n;
-    selectNama.appendChild(opt);
-});
+fetch("https://script.google.com/macros/s/AKfycbxRb9YsZcN3_DKQB4kCe-YES3pJP-qxMWMdhrkGBWQjEb4Wzxu8YYCNuH6E74thTJbiaQ/exec?namaList")
+    .then(res => res.json())
+    .then(namaList => {
+        const selectNama = document.getElementById("nama");
+        namaList.forEach(nama => {
+            const opt = document.createElement("option");
+            opt.value = nama;
+            opt.textContent = nama;
+            selectNama.appendChild(opt);
+        });
+    })
+    .catch(err => {
+        alert("⚠️ Gagal ambil nama dari Google Sheets.");
+        console.error(err);
+    });
